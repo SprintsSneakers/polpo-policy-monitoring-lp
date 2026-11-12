@@ -1,0 +1,11 @@
+<svg class="stars" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+    <g fill="#EBC63F">
+      <g id="eu-star"><path d="M0,-7 L1.6,-2.2 L6.7,-2.2 L2.6,0.8 L4.1,5.7 L0,2.7 L-4.1,5.7 L-2.6,0.8 L-6.7,-2.2 L-1.6,-2.2 Z"/></g>
+    </g>
+    <use href="#eu-star" x="100" y="20"/><use href="#eu-star" x="140" y="30"/>
+    <use href="#eu-star" x="170" y="60"/><use href="#eu-star" x="180" y="100"/>
+    <use href="#eu-star" x="170" y="140"/><use href="#eu-star" x="140" y="170"/>
+    <use href="#eu-star" x="100" y="180"/><use href="#eu-star" x="60" y="170"/>
+    <use href="#eu-star" x="30" y="140"/><use href="#eu-star" x="20" y="100"/>
+    <use href="#eu-star" x="30" y="60"/><use href="#eu-star" x="60" y="30"/>
+  </svg>

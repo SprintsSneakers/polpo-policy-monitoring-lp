@@ -1,0 +1,1264 @@
+{
+  "schema_version": "1.0",
+  "document_title": "Polpo.ai — Conversion Copy & Agency Implementation Brief",
+  "review_date": "2026-11-03",
+  "requested_url": "https://polpo.ai/",
+  "verification": {
+    "root_url": "Not retrieved in this review; no conclusion about site availability.",
+    "www_url": "Browser-returned redirect to the Polpo AI Assistant page.",
+    "raw_dom_inspected": false,
+    "visual_layout_inspected": false,
+    "form_submitted": false,
+    "production_changes_made": false,
+    "limitation": "Mapping is against browser-returned text from the redirect and demo page, not a verified new polpo.ai campaign-page DOM."
+  },
+  "offer": {
+    "user_steps": 2,
+    "step_1": "Complete the topic form.",
+    "step_2": "Attend a 30-minute training and account handover.",
+    "prepared_before_handover": [
+      "Trial account",
+      "Topic-specific saved searches",
+      "Customised email alert settings"
+    ],
+    "monitoring_start": "Immediately after the training and handover.",
+    "first_alert_delivery": "Depends on matching publications and configured frequency.",
+    "trial_duration": null,
+    "trial_price": null,
+    "trial_clock_start": null,
+    "included_dashboards": null,
+    "ai_assistant_included": null
+  },
+  "deployment": {
+    "mode": "draft_only",
+    "auto_publish": false,
+    "target_canonical_url": null,
+    "approved_page_id": null,
+    "locale_routes": {
+      "en": null,
+      "nl-BE": null
+    },
+    "form_destination": null,
+    "booking_destination": null,
+    "agency_binding_required": true
+  },
+  "constraints": [
+    "Preserve the existing page design, component order, grids, typography, colours, spacing, image ratios and responsive behaviour.",
+    "Logical copy IDs are not existing CSS selectors or CMS field names.",
+    "Bind each item to the intended campaign-page instance before modifying it. If anchors mismatch or the page is different, stop automatic application and produce a mapping report.",
+    "Do not modify the shared AI Assistant product page, shared navigation, footer or global /demo/ page solely because they are the reviewed fallback sources.",
+    "Replace only approved text nodes or CMS fields. Never perform a global replacement of the words AI Assistant, demo or Get started.",
+    "Preserve form input names, values, IDs, required flags, submission endpoint, CRM mapping, consent wording, privacy links and analytics identifiers.",
+    "Belgian Dutch display labels must not change underlying geographic option values. Do not rename an EU value to a Belgian regional institution.",
+    "Optional existing-slot copy must be omitted if no matching slot exists. Do not add sections or fields automatically.",
+    "Monitoring activation must not be claimed on the form-submit state. Only a real booking may trigger T05.",
+    "Do not add free, 30 days, no credit card, unlimited access, all institutions, response-time or savings claims without campaign-specific confirmation.",
+    "Keep both desktop and mobile instances consistent. Review line wrapping without reducing type size or redesigning components.",
+    "No customer quote, logo, endorsement or user account data may be invented."
+  ],
+  "bindings": [
+    {
+      "binding_id": "MAP01",
+      "content_ids": [
+        "H01",
+        "H02",
+        "H03",
+        "C01",
+        "C02"
+      ],
+      "observed_page": "S2",
+      "anchor_text": "AI Assistant",
+      "anchor_context": "Main H1 after the primary navigation, not a menu item or feature label.",
+      "target_description": "Hero heading, introductory copy and local conversion links.",
+      "dom_selector": null,
+      "status": "agency_binding_required"
+    },
+    {
+      "binding_id": "MAP02",
+      "content_ids": [
+        "V01",
+        "V02"
+      ],
+      "observed_page": "S2",
+      "anchor_text": "value of the AI Assistant",
+      "anchor_context": "Value section below the hero imagery.",
+      "target_description": "Existing value heading and accompanying body.",
+      "dom_selector": null,
+      "status": "agency_binding_required"
+    },
+    {
+      "binding_id": "MAP03",
+      "content_ids": [
+        "B00",
+        "B01T",
+        "B01B",
+        "B02T",
+        "B02B",
+        "B03T",
+        "B03B",
+        "B04T",
+        "B04B"
+      ],
+      "observed_page": "S2",
+      "anchor_text": "Ask questions",
+      "anchor_context": "Section followed by four use-case/example blocks.",
+      "target_description": "Section heading and four card title/body pairs, in their existing order.",
+      "dom_selector": null,
+      "status": "agency_binding_required"
+    },
+    {
+      "binding_id": "MAP04",
+      "content_ids": [
+        "P01",
+        "P02",
+        "P03",
+        "P04",
+        "P05"
+      ],
+      "observed_page": "S2",
+      "anchor_text": "Developing your strategy",
+      "anchor_context": "Section with two text sub-blocks after the four examples.",
+      "target_description": "Existing parent heading and two sub-blocks. Keep the journey at two steps.",
+      "dom_selector": null,
+      "status": "agency_binding_required"
+    },
+    {
+      "binding_id": "MAP05",
+      "content_ids": [
+        "Q01Q",
+        "Q01A",
+        "Q02Q",
+        "Q02A",
+        "Q03Q",
+        "Q03A",
+        "Q04Q",
+        "Q04A",
+        "Q05Q",
+        "Q05A",
+        "Q06Q",
+        "Q06A"
+      ],
+      "observed_page": "S2",
+      "anchor_text": "Frequently Asked",
+      "anchor_context": "Six-question FAQ block before the final conversion section.",
+      "target_description": "Replace FAQ questions and answers in matching ordinal slots.",
+      "dom_selector": null,
+      "status": "agency_binding_required"
+    },
+    {
+      "binding_id": "MAP06",
+      "content_ids": [
+        "Z01",
+        "Z02",
+        "C01"
+      ],
+      "observed_page": "S2",
+      "anchor_text": "Did you become curious",
+      "anchor_context": "Final conversion block before the footer.",
+      "target_description": "Closing headline, existing copy slot and local primary button. If there is no body slot, omit Z02.",
+      "dom_selector": null,
+      "status": "agency_binding_required"
+    },
+    {
+      "binding_id": "MAP07",
+      "content_ids": [
+        "F01",
+        "F02",
+        "F03",
+        "F04",
+        "F05",
+        "F06",
+        "F07",
+        "F08",
+        "F09",
+        "F10",
+        "F11",
+        "F12",
+        "F13",
+        "F14",
+        "F15",
+        "F16",
+        "E01",
+        "E02",
+        "E03"
+      ],
+      "observed_page": "S3",
+      "anchor_text": "Request a Demo",
+      "anchor_context": "Separate /demo/ destination reached by the retrieved page CTA. This is NOT a verified embedded form on polpo.ai.",
+      "target_description": "Use only an agency-approved campaign-scoped instance of the current form. Do not overwrite the general demo page without approval.",
+      "dom_selector": null,
+      "status": "agency_binding_required"
+    },
+    {
+      "binding_id": "MAP08",
+      "content_ids": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05"
+      ],
+      "observed_page": null,
+      "anchor_text": null,
+      "anchor_context": "No form submission, thank-you screen or booking flow was tested.",
+      "target_description": "Bind to actual confirmation states after backend verification.",
+      "dom_selector": null,
+      "status": "agency_binding_required"
+    },
+    {
+      "binding_id": "MAP09",
+      "content_ids": [
+        "M01",
+        "M02"
+      ],
+      "observed_page": null,
+      "anchor_text": null,
+      "anchor_context": "Campaign-specific title and description.",
+      "target_description": "Bind to the campaign page metadata implementation.",
+      "dom_selector": null,
+      "status": "agency_binding_required"
+    }
+  ],
+  "copy": [
+    {
+      "id": "H01",
+      "placement": "Hero: main heading",
+      "group": "hero",
+      "operation": "replace_text",
+      "status": "ready_for_binding",
+      "copy": {
+        "en": "Your topic. Your monitor. Set up for you.",
+        "nl-BE": "Jouw dossier. Jouw monitor. Voor jou ingesteld."
+      },
+      "basis": [
+        "S1"
+      ],
+      "implementation_note": ""
+    },
+    {
+      "id": "H02",
+      "placement": "Hero: supporting paragraph",
+      "group": "hero",
+      "operation": "replace_text",
+      "status": "ready_for_binding",
+      "copy": {
+        "en": "Tell us the policy topic you follow. We’ll prepare your Polpo trial with searches and email alerts tailored to it. After a 30-minute training session and account handover, your monitoring starts.",
+        "nl-BE": "Vertel ons welk Belgisch beleidsdossier je opvolgt. Wij bereiden je Polpo-proefaccount voor, met zoekopdrachten en e-mailmeldingen op maat. Na een training van 30 minuten krijg je toegang en start je monitoring."
+      },
+      "basis": [
+        "S1"
+      ],
+      "implementation_note": ""
+    },
+    {
+      "id": "C01",
+      "placement": "Primary conversion button: hero and final conversion block",
+      "group": "cta",
+      "operation": "replace_text",
+      "status": "ready_for_binding",
+      "copy": {
+        "en": "Request my trial",
+        "nl-BE": "Vraag mijn proefaccount aan"
+      },
+      "basis": [
+        "S1"
+      ],
+      "implementation_note": "Use only on the campaign variant. Resolve the destination to the campaign form; do not invent an anchor or alter a shared navigation CTA site-wide."
+    },
+    {
+      "id": "H03",
+      "placement": "Hero: existing small supporting text, if available",
+      "group": "hero",
+      "operation": "replace_text",
+      "status": "optional_existing_slot_only",
+      "copy": {
+        "en": "Set up for your topic. A 30-minute training. Monitoring active after handover.",
+        "nl-BE": "Ingesteld op jouw dossier. Een training van 30 minuten. Monitoring actief na de overdracht."
+      },
+      "basis": [
+        "S1"
+      ],
+      "implementation_note": "Do not add a new visual component just to display this line. H02 already explains the sequence."
+    },
+    {
+      "id": "C02",
+      "placement": "Existing secondary hero link, if retained",
+      "group": "cta",
+      "operation": "replace_text",
+      "status": "ready_for_binding",
+      "copy": {
+        "en": "How it works",
+        "nl-BE": "Zo werkt het"
+      },
+      "basis": [
+        "S1"
+      ],
+      "implementation_note": "Point to the existing block containing P01–P05 after its anchor has been verified. Do not send visitors into a separate generic demo route."
+    },
+    {
+      "id": "V01",
+      "placement": "Main value section: heading",
+      "group": "value",
+      "operation": "replace_text",
+      "status": "ready_for_binding",
+      "copy": {
+        "en": "A working monitor for the topic you already follow",
+        "nl-BE": "Een werkende monitor voor jouw Belgische dossier"
+      },
+      "basis": [
+        "S1"
+      ],
+      "implementation_note": ""
+    },
+    {
+      "id": "V02",
+      "placement": "Main value section: body",
+      "group": "value",
+      "operation": "replace_text",
+      "status": "ready_for_binding",
+      "copy": {
+        "en": "Begin with your own policy topic. We prepare the searches and alert settings, then review them with you in your trial account. You can explore the available political information and see how the setup fits your day-to-day work.",
+        "nl-BE": "Start met het dossier waar je nu aan werkt. Wij bereiden de zoekopdrachten en meldingen voor en nemen ze samen met je door in je proefaccount. Zo verken je de beschikbare politieke informatie en zie je hoe de monitor aansluit op jouw werk."
+      },
+      "basis": [
+        "S1"
+      ],
+      "implementation_note": ""
+    },
+    {
+      "id": "B00",
+      "placement": "Heading above the four existing benefit/example cards",
+      "group": "benefits",
+      "operation": "replace_text",
+      "status": "ready_for_binding",
+      "copy": {
+        "en": "What is ready for you",
+        "nl-BE": "Wat staat er voor je klaar?"
+      },
+      "basis": [
+        "S1"
+      ],
+      "implementation_note": ""
+    },
+    {
+      "id": "B01T",
+      "placement": "Benefit card 1: heading",
+      "group": "benefits",
+      "operation": "replace_text",
+      "status": "ready_for_binding",
+      "copy": {
+        "en": "Searches tailored to your topic",
+        "nl-BE": "Zoekopdrachten op maat"
+      },
+      "basis": [
+        "S1"
+      ],
+      "implementation_note": ""
+    },
+    {
+      "id": "B01B",
+      "placement": "Benefit card 1: body",
+      "group": "benefits",
+      "operation": "replace_text",
+      "status": "ready_for_binding",
+      "copy": {
+        "en": "We translate your topic into a starting setup and check the scope with you during the training.",
+        "nl-BE": "Wij vertalen jouw dossier naar een eerste inrichting en stemmen tijdens de training de afbakening met je af."
+      },
+      "basis": [
+        "S1"
+      ],
+      "implementation_note": ""
+    },
+    {
+      "id": "B02T",
+      "placement": "Benefit card 2: heading",
+      "group": "benefits",
+      "operation": "replace_text",
+      "status": "ready_for_binding",
+      "copy": {
+        "en": "Email alerts around your priorities",
+        "nl-BE": "E-mailmeldingen rond jouw dossier"
+      },
+      "basis": [
+        "S1"
+      ],
+      "implementation_note": ""
+    },
+    {
+      "id": "B02B",
+      "placement": "Benefit card 2: body",
+      "group": "benefits",
+      "operation": "replace_text",
+      "status": "ready_for_binding",
+      "copy": {
+        "en": "Your alerts follow your selected topic. During the training, we confirm which updates you want and how often you receive them.",
+        "nl-BE": "Je meldingen zijn afgestemd op jouw dossier. Tijdens de training bepalen we welke updates je wilt ontvangen en hoe vaak."
+      },
+      "basis": [
+        "S1"
+      ],
+      "implementation_note": ""
+    },
+    {
+      "id": "B03T",
+      "placement": "Benefit card 3: heading",
+      "group": "benefits",
+      "operation": "replace_text",
+      "status": "ready_for_binding",
+      "copy": {
+        "en": "Training in your own trial account",
+        "nl-BE": "Training in jouw proefaccount"
+      },
+      "basis": [
+        "S1"
+      ],
+      "implementation_note": ""
+    },
+    {
+      "id": "B03B",
+      "placement": "Benefit card 3: body",
+      "group": "benefits",
+      "operation": "replace_text",
+      "status": "ready_for_binding",
+      "copy": {
+        "en": "In 30 minutes, we review your setup, show you the controls and hand over access. Your monitoring starts straight afterwards.",
+        "nl-BE": "In 30 minuten nemen we je inrichting door, tonen we de belangrijkste functies en geven we je toegang. Meteen daarna start je monitoring."
+      },
+      "basis": [
+        "S1"
+      ],
+      "implementation_note": ""
+    },
+    {
+      "id": "B04T",
+      "placement": "Benefit card 4: heading",
+      "group": "benefits",
+      "operation": "replace_text",
+      "status": "ready_for_binding",
+      "copy": {
+        "en": "Control to refine as you go",
+        "nl-BE": "Zelf verfijnen wanneer nodig"
+      },
+      "basis": [
+        "S1"
+      ],
+      "implementation_note": ""
+    },
+    {
+      "id": "B04B",
+      "placement": "Benefit card 4: body",
+      "group": "benefits",
+      "operation": "replace_text",
+      "status": "ready_for_binding",
+      "copy": {
+        "en": "Adjust your saved searches and alert preferences as your priorities change. You remain in control of what you follow.",
+        "nl-BE": "Pas je opgeslagen zoekopdrachten en meldingen aan wanneer je prioriteiten veranderen. Jij bepaalt wat je opvolgt."
+      },
+      "basis": [
+        "S5"
+      ],
+      "implementation_note": ""
+    },
+    {
+      "id": "P01",
+      "placement": "Existing process section: heading",
+      "group": "process",
+      "operation": "replace_text",
+      "status": "ready_for_binding",
+      "copy": {
+        "en": "Your monitor, ready in two steps",
+        "nl-BE": "Jouw monitor in twee stappen"
+      },
+      "basis": [
+        "S1"
+      ],
+      "implementation_note": ""
+    },
+    {
+      "id": "P02",
+      "placement": "Process sub-block 1: heading",
+      "group": "process",
+      "operation": "replace_text",
+      "status": "ready_for_binding",
+      "copy": {
+        "en": "1. Tell us what you follow",
+        "nl-BE": "1. Vertel ons wat je opvolgt"
+      },
+      "basis": [
+        "S1"
+      ],
+      "implementation_note": ""
+    },
+    {
+      "id": "P03",
+      "placement": "Process sub-block 1: body",
+      "group": "process",
+      "operation": "replace_text",
+      "status": "ready_for_binding",
+      "copy": {
+        "en": "Complete the form with your policy topic and relevant institutions. We use your answers to prepare your trial account and tailored alerts.",
+        "nl-BE": "Vul het formulier in met je beleidsdossier en de relevante instellingen. Met jouw antwoorden bereiden we je proefaccount en e-mailmeldingen voor."
+      },
+      "basis": [
+        "S1"
+      ],
+      "implementation_note": ""
+    },
+    {
+      "id": "P04",
+      "placement": "Process sub-block 2: heading",
+      "group": "process",
+      "operation": "replace_text",
+      "status": "ready_for_binding",
+      "copy": {
+        "en": "2. Get your 30-minute training and account handover",
+        "nl-BE": "2. Volg je training van 30 minuten en krijg toegang"
+      },
+      "basis": [
+        "S1"
+      ],
+      "implementation_note": ""
+    },
+    {
+      "id": "P05",
+      "placement": "Process sub-block 2: body",
+      "group": "process",
+      "operation": "replace_text",
+      "status": "ready_for_binding",
+      "copy": {
+        "en": "We walk you through your prepared account, refine the setup together and hand it over to you. Your monitoring starts immediately after the session.",
+        "nl-BE": "We tonen je het voorbereide account, verfijnen samen de inrichting en geven je toegang. Meteen na de sessie start je monitoring."
+      },
+      "basis": [
+        "S1"
+      ],
+      "implementation_note": ""
+    },
+    {
+      "id": "Z01",
+      "placement": "Final conversion block: heading",
+      "group": "closing",
+      "operation": "replace_text",
+      "status": "ready_for_binding",
+      "copy": {
+        "en": "Let’s set up your first monitor",
+        "nl-BE": "Laat je eerste monitor voor je instellen"
+      },
+      "basis": [
+        "S1"
+      ],
+      "implementation_note": ""
+    },
+    {
+      "id": "Z02",
+      "placement": "Final conversion block: body",
+      "group": "closing",
+      "operation": "replace_text",
+      "status": "ready_for_binding",
+      "copy": {
+        "en": "Share your topic. We’ll prepare the setup and show you how to use it in your 30-minute training.",
+        "nl-BE": "Deel je Belgische dossier. Wij bereiden de inrichting voor en tonen je tijdens een training van 30 minuten hoe je ermee werkt."
+      },
+      "basis": [
+        "S1"
+      ],
+      "implementation_note": ""
+    },
+    {
+      "id": "Q01Q",
+      "placement": "Existing FAQ item 1: question",
+      "group": "faq",
+      "operation": "replace_text",
+      "status": "ready_for_binding",
+      "copy": {
+        "en": "What will I receive?",
+        "nl-BE": "Wat krijg ik?"
+      },
+      "basis": [
+        "S1"
+      ],
+      "implementation_note": "Reuse an existing FAQ slot. If no slot exists in the approved campaign page, do not create a new section automatically."
+    },
+    {
+      "id": "Q01A",
+      "placement": "Existing FAQ item 1: answer",
+      "group": "faq",
+      "operation": "replace_text",
+      "status": "ready_for_binding",
+      "copy": {
+        "en": "A Polpo trial account with saved searches and email alerts configured around your topic. We review the setup with you and hand over access during the 30-minute training.",
+        "nl-BE": "Een Polpo-proefaccount met opgeslagen zoekopdrachten en e-mailmeldingen rond jouw dossier. Tijdens de training van 30 minuten nemen we de inrichting door en geven we je toegang."
+      },
+      "basis": [
+        "S1"
+      ],
+      "implementation_note": ""
+    },
+    {
+      "id": "Q02Q",
+      "placement": "Existing FAQ item 2: question",
+      "group": "faq",
+      "operation": "replace_text",
+      "status": "ready_for_binding",
+      "copy": {
+        "en": "What happens after I complete the form?",
+        "nl-BE": "Wat gebeurt er nadat ik het formulier invul?"
+      },
+      "basis": [
+        "S1"
+      ],
+      "implementation_note": "Reuse an existing FAQ slot. If no slot exists in the approved campaign page, do not create a new section automatically."
+    },
+    {
+      "id": "Q02A",
+      "placement": "Existing FAQ item 2: answer",
+      "group": "faq",
+      "operation": "replace_text",
+      "status": "ready_for_binding",
+      "copy": {
+        "en": "We use your answers to prepare your account and arrange the training with you. Submitting the form requests your trial; monitoring starts after the training and account handover.",
+        "nl-BE": "We gebruiken je antwoorden om je account voor te bereiden en de training met je in te plannen. Met het formulier vraag je een proefaccount aan; je monitoring start na de training en overdracht."
+      },
+      "basis": [
+        "S1"
+      ],
+      "implementation_note": ""
+    },
+    {
+      "id": "Q03Q",
+      "placement": "Existing FAQ item 3: question",
+      "group": "faq",
+      "operation": "replace_text",
+      "status": "ready_for_binding",
+      "copy": {
+        "en": "Why is the training included?",
+        "nl-BE": "Waarom hoort er een training bij?"
+      },
+      "basis": [
+        "S1"
+      ],
+      "implementation_note": "Reuse an existing FAQ slot. If no slot exists in the approved campaign page, do not create a new section automatically."
+    },
+    {
+      "id": "Q03A",
+      "placement": "Existing FAQ item 3: answer",
+      "group": "faq",
+      "operation": "replace_text",
+      "status": "ready_for_binding",
+      "copy": {
+        "en": "The session is held in your own prepared account. We check your topic and alert settings, show you how to use and adjust the monitor, and give you access to continue independently.",
+        "nl-BE": "De sessie vindt plaats in jouw voorbereide account. We controleren je dossier en meldingen, tonen hoe je de monitor gebruikt en aanpast, en geven je toegang om zelf verder te werken."
+      },
+      "basis": [
+        "S1"
+      ],
+      "implementation_note": ""
+    },
+    {
+      "id": "Q04Q",
+      "placement": "Existing FAQ item 4: question",
+      "group": "faq",
+      "operation": "replace_text",
+      "status": "ready_for_binding",
+      "copy": {
+        "en": "When will I receive updates?",
+        "nl-BE": "Wanneer ontvang ik updates?"
+      },
+      "basis": [
+        "S1"
+      ],
+      "implementation_note": "Reuse an existing FAQ slot. If no slot exists in the approved campaign page, do not create a new section automatically."
+    },
+    {
+      "id": "Q04A",
+      "placement": "Existing FAQ item 4: answer",
+      "group": "faq",
+      "operation": "replace_text",
+      "status": "ready_for_binding",
+      "copy": {
+        "en": "Monitoring starts immediately after handover. An email alert is sent when matching information is available, according to your alert settings. The first new alert therefore depends on relevant publications and your chosen frequency.",
+        "nl-BE": "Je monitoring start meteen na de overdracht. Je ontvangt e-mailmeldingen zodra passende informatie beschikbaar is, volgens je instellingen. De eerste nieuwe melding hangt dus af van relevante publicaties en de gekozen frequentie."
+      },
+      "basis": [
+        "S1"
+      ],
+      "implementation_note": ""
+    },
+    {
+      "id": "Q05Q",
+      "placement": "Existing FAQ item 5: question",
+      "group": "faq",
+      "operation": "replace_text",
+      "status": "ready_for_binding",
+      "copy": {
+        "en": "Can I change my topic or alerts?",
+        "nl-BE": "Kan ik mijn dossier of meldingen aanpassen?"
+      },
+      "basis": [
+        "S1"
+      ],
+      "implementation_note": "Reuse an existing FAQ slot. If no slot exists in the approved campaign page, do not create a new section automatically."
+    },
+    {
+      "id": "Q05A",
+      "placement": "Existing FAQ item 5: answer",
+      "group": "faq",
+      "operation": "replace_text",
+      "status": "ready_for_binding",
+      "copy": {
+        "en": "Yes. You can adjust your saved searches and alert preferences yourself. We show you how during the training.",
+        "nl-BE": "Ja. Je kunt je opgeslagen zoekopdrachten en meldingen zelf aanpassen. Tijdens de training tonen we hoe dat werkt."
+      },
+      "basis": [
+        "S5"
+      ],
+      "implementation_note": ""
+    },
+    {
+      "id": "Q06Q",
+      "placement": "Existing FAQ item 6: question",
+      "group": "faq",
+      "operation": "replace_text",
+      "status": "ready_for_binding",
+      "copy": {
+        "en": "Which political sources are included?",
+        "nl-BE": "Welke Belgische bronnen zijn inbegrepen?"
+      },
+      "basis": [
+        "S1"
+      ],
+      "implementation_note": "Reuse an existing FAQ slot. If no slot exists in the approved campaign page, do not create a new section automatically."
+    },
+    {
+      "id": "Q06A",
+      "placement": "Existing FAQ item 6: answer",
+      "group": "faq",
+      "operation": "replace_text",
+      "status": "ready_for_binding",
+      "copy": {
+        "en": "We agree the relevant institutions and available sources for your topic when preparing the account. You can see the selected sources in your trial.",
+        "nl-BE": "Bij de voorbereiding stemmen we af welke beschikbare Belgische bronnen relevant zijn voor jouw dossier. Je ziet de geselecteerde bronnen in je proefaccount."
+      },
+      "basis": [
+        "S1"
+      ],
+      "implementation_note": ""
+    },
+    {
+      "id": "F01",
+      "placement": "Campaign form: heading",
+      "group": "form",
+      "operation": "replace_text",
+      "status": "ready_for_binding",
+      "copy": {
+        "en": "Tell us what you want to monitor",
+        "nl-BE": "Vertel ons welk dossier je wilt opvolgen"
+      },
+      "basis": [
+        "S1"
+      ],
+      "implementation_note": ""
+    },
+    {
+      "id": "F02",
+      "placement": "Campaign form: introductory/help text",
+      "group": "form",
+      "operation": "replace_text",
+      "status": "ready_for_binding",
+      "copy": {
+        "en": "One topic is enough to get started. We’ll use your answers to prepare your trial, then arrange your 30-minute training and account handover.",
+        "nl-BE": "Eén dossier volstaat om te starten. Met je antwoorden bereiden we je proefaccount voor. Daarna plannen we je training van 30 minuten en de overdracht van je account."
+      },
+      "basis": [
+        "S1"
+      ],
+      "implementation_note": ""
+    },
+    {
+      "id": "F03",
+      "placement": "First-name label",
+      "group": "form",
+      "operation": "replace_text",
+      "status": "ready_for_binding",
+      "copy": {
+        "en": "First name",
+        "nl-BE": "Voornaam"
+      },
+      "basis": [
+        "S1"
+      ],
+      "implementation_note": "Preserve existing input names, IDs, required flags, option values, integrations and validation. Display copy only; no new fields."
+    },
+    {
+      "id": "F04",
+      "placement": "Last-name label",
+      "group": "form",
+      "operation": "replace_text",
+      "status": "ready_for_binding",
+      "copy": {
+        "en": "Last name",
+        "nl-BE": "Achternaam"
+      },
+      "basis": [
+        "S1"
+      ],
+      "implementation_note": "Preserve existing input names, IDs, required flags, option values, integrations and validation. Display copy only; no new fields."
+    },
+    {
+      "id": "F05",
+      "placement": "Email label",
+      "group": "form",
+      "operation": "replace_text",
+      "status": "ready_for_binding",
+      "copy": {
+        "en": "Work email",
+        "nl-BE": "Werkmailadres"
+      },
+      "basis": [
+        "S1"
+      ],
+      "implementation_note": "Preserve existing input names, IDs, required flags, option values, integrations and validation. Display copy only; no new fields."
+    },
+    {
+      "id": "F06",
+      "placement": "Telephone label",
+      "group": "form",
+      "operation": "replace_text",
+      "status": "ready_for_binding",
+      "copy": {
+        "en": "Phone number",
+        "nl-BE": "Telefoonnummer"
+      },
+      "basis": [
+        "S1"
+      ],
+      "implementation_note": "Preserve existing input names, IDs, required flags, option values, integrations and validation. Display copy only; no new fields."
+    },
+    {
+      "id": "F07",
+      "placement": "Existing geographic-choice group: label",
+      "group": "form",
+      "operation": "replace_text",
+      "status": "ready_for_binding",
+      "copy": {
+        "en": "Which politics do you follow?",
+        "nl-BE": "Welke monitoring heb je nodig?"
+      },
+      "basis": [
+        "S1"
+      ],
+      "implementation_note": "Preserve existing input names, IDs, required flags, option values, integrations and validation. Display copy only; no new fields."
+    },
+    {
+      "id": "F08",
+      "placement": "Existing EU option: display label",
+      "group": "form",
+      "operation": "replace_text",
+      "status": "ready_for_binding",
+      "copy": {
+        "en": "European Union",
+        "nl-BE": "Europese Unie"
+      },
+      "basis": [
+        "S1"
+      ],
+      "implementation_note": "Preserve existing input names, IDs, required flags, option values, integrations and validation. Display copy only; no new fields."
+    },
+    {
+      "id": "F09",
+      "placement": "Existing NL option: display label",
+      "group": "form",
+      "operation": "replace_text",
+      "status": "ready_for_binding",
+      "copy": {
+        "en": "Netherlands",
+        "nl-BE": "Nederland"
+      },
+      "basis": [
+        "S1"
+      ],
+      "implementation_note": "Preserve existing input names, IDs, required flags, option values, integrations and validation. Display copy only; no new fields."
+    },
+    {
+      "id": "F10",
+      "placement": "Existing BE option: display label",
+      "group": "form",
+      "operation": "replace_text",
+      "status": "ready_for_binding",
+      "copy": {
+        "en": "Belgium",
+        "nl-BE": "België"
+      },
+      "basis": [
+        "S1"
+      ],
+      "implementation_note": "Preserve existing input names, IDs, required flags, option values, integrations and validation. Display copy only; no new fields."
+    },
+    {
+      "id": "F11",
+      "placement": "Existing Other option: display label",
+      "group": "form",
+      "operation": "replace_text",
+      "status": "ready_for_binding",
+      "copy": {
+        "en": "Other",
+        "nl-BE": "Andere"
+      },
+      "basis": [
+        "S1"
+      ],
+      "implementation_note": "Preserve existing input names, IDs, required flags, option values, integrations and validation. Display copy only; no new fields."
+    },
+    {
+      "id": "F12",
+      "placement": "Existing open-text topic field: label",
+      "group": "form",
+      "operation": "replace_text",
+      "status": "ready_for_binding",
+      "copy": {
+        "en": "What would you like to monitor?",
+        "nl-BE": "Welk Belgisch dossier wil je opvolgen?"
+      },
+      "basis": [
+        "S1"
+      ],
+      "implementation_note": "Preserve existing input names, IDs, required flags, option values, integrations and validation. Display copy only; no new fields."
+    },
+    {
+      "id": "F13",
+      "placement": "Topic textarea: placeholder",
+      "group": "form",
+      "operation": "replace_text",
+      "status": "ready_for_binding",
+      "copy": {
+        "en": "For example: EU rules on sustainable packaging — policy proposals and committee discussions relevant to packaging producers.",
+        "nl-BE": "Bijvoorbeeld: energiebeleid voor Belgische bedrijven — federale en Vlaamse beleidsvoorstellen, parlementaire vragen en commissiebesprekingen."
+      },
+      "basis": [
+        "S1"
+      ],
+      "implementation_note": "Preserve existing input names, IDs, required flags, option values, integrations and validation. Display copy only; no new fields."
+    },
+    {
+      "id": "F14",
+      "placement": "Topic textarea: help text",
+      "group": "form",
+      "operation": "replace_text",
+      "status": "optional_existing_slot_only",
+      "copy": {
+        "en": "Name one topic and what matters to your organisation. Add relevant institutions or exclusions if useful. No search query needed.",
+        "nl-BE": "Noem één dossier en wat relevant is voor je organisatie. Vermeld eventueel instellingen of onderwerpen die je wilt uitsluiten. Een zoekopdracht formuleren hoeft niet."
+      },
+      "basis": [
+        "S1"
+      ],
+      "implementation_note": "Preserve existing input names, IDs, required flags, option values, integrations and validation. Display copy only; no new fields."
+    },
+    {
+      "id": "F15",
+      "placement": "Form submit button",
+      "group": "form",
+      "operation": "replace_text",
+      "status": "ready_for_binding",
+      "copy": {
+        "en": "Request my trial",
+        "nl-BE": "Vraag mijn proefaccount aan"
+      },
+      "basis": [
+        "S1"
+      ],
+      "implementation_note": "Preserve existing input names, IDs, required flags, option values, integrations and validation. Display copy only; no new fields."
+    },
+    {
+      "id": "F16",
+      "placement": "Existing post-button supporting line, if available",
+      "group": "form",
+      "operation": "replace_text",
+      "status": "optional_existing_slot_only",
+      "copy": {
+        "en": "We prepare the setup. You receive access during the 30-minute training.",
+        "nl-BE": "Wij bereiden de inrichting voor. Je krijgt toegang tijdens de training van 30 minuten."
+      },
+      "basis": [
+        "S1"
+      ],
+      "implementation_note": "Preserve existing input names, IDs, required flags, option values, integrations and validation. Display copy only; no new fields."
+    },
+    {
+      "id": "E01",
+      "placement": "Existing required-topic validation message",
+      "group": "validation",
+      "operation": "replace_text",
+      "status": "proposed_state_binding_required",
+      "copy": {
+        "en": "Tell us which topic you would like to monitor.",
+        "nl-BE": "Vermeld welk dossier je wilt opvolgen."
+      },
+      "basis": [
+        "S1"
+      ],
+      "implementation_note": ""
+    },
+    {
+      "id": "E02",
+      "placement": "Existing email validation message",
+      "group": "validation",
+      "operation": "replace_text",
+      "status": "proposed_state_binding_required",
+      "copy": {
+        "en": "Enter a valid email address.",
+        "nl-BE": "Vul een geldig e-mailadres in."
+      },
+      "basis": [
+        "S1"
+      ],
+      "implementation_note": ""
+    },
+    {
+      "id": "E03",
+      "placement": "Existing submission-failure message",
+      "group": "validation",
+      "operation": "replace_text",
+      "status": "proposed_state_binding_required",
+      "copy": {
+        "en": "Your request was not sent. Please try again.",
+        "nl-BE": "Je aanvraag is niet verzonden. Probeer het opnieuw."
+      },
+      "basis": [
+        "S1"
+      ],
+      "implementation_note": ""
+    },
+    {
+      "id": "T01",
+      "placement": "Post-submit confirmation: heading",
+      "group": "confirmation",
+      "operation": "replace_text",
+      "status": "proposed_state_binding_required",
+      "copy": {
+        "en": "Your request is received",
+        "nl-BE": "Je aanvraag is ontvangen"
+      },
+      "basis": [
+        "S1"
+      ],
+      "implementation_note": ""
+    },
+    {
+      "id": "T02",
+      "placement": "Post-submit confirmation: default body",
+      "group": "confirmation",
+      "operation": "replace_text",
+      "status": "proposed_state_binding_required",
+      "copy": {
+        "en": "We’ll prepare your trial around the topic you shared and contact you to arrange your 30-minute training. During the session, we’ll review the setup and hand over your account. Your monitoring starts afterwards.",
+        "nl-BE": "We bereiden je proefaccount voor rond het dossier dat je doorgaf en nemen contact op om je training van 30 minuten in te plannen. Tijdens de sessie nemen we de inrichting door en geven we je toegang. Daarna start je monitoring."
+      },
+      "basis": [
+        "S1"
+      ],
+      "implementation_note": "",
+      "condition": "Use when no verified self-booking route is available."
+    },
+    {
+      "id": "T03",
+      "placement": "Post-submit confirmation: scheduling-enabled alternative body",
+      "group": "confirmation",
+      "operation": "replace_text",
+      "status": "conditional_do_not_publish_by_default",
+      "copy": {
+        "en": "Next, book your 30-minute training. We’ll prepare your trial beforehand, review it with you and hand over your account during the session. Your monitoring starts afterwards.",
+        "nl-BE": "Plan nu je training van 30 minuten. Wij bereiden je proefaccount vooraf voor, nemen het samen met je door en geven je tijdens de sessie toegang. Daarna start je monitoring."
+      },
+      "basis": [
+        "S1"
+      ],
+      "implementation_note": "",
+      "condition": "Only when a tested booking route exists and the account can be prepared before the chosen slot. Replaces T02; never show both."
+    },
+    {
+      "id": "T04",
+      "placement": "Post-submit confirmation: booking button",
+      "group": "confirmation",
+      "operation": "replace_text",
+      "status": "conditional_do_not_publish_by_default",
+      "copy": {
+        "en": "Book my 30-minute training",
+        "nl-BE": "Plan mijn training van 30 minuten"
+      },
+      "basis": [
+        "S1"
+      ],
+      "implementation_note": "",
+      "condition": "Only with T03 and a verified booking destination. Do not add a non-working booking button."
+    },
+    {
+      "id": "T05",
+      "placement": "Existing booked-state confirmation",
+      "group": "confirmation",
+      "operation": "replace_text",
+      "status": "conditional_do_not_publish_by_default",
+      "copy": {
+        "en": "Your training is booked. We’ll prepare your account before the session. You’ll receive access during the training, and monitoring starts immediately afterwards.",
+        "nl-BE": "Je training is ingepland. Wij bereiden je account vooraf voor. Tijdens de training krijg je toegang en meteen daarna start je monitoring."
+      },
+      "basis": [
+        "S1"
+      ],
+      "implementation_note": "",
+      "condition": "Only after booking is confirmed by the scheduling system; do not display merely after form submission."
+    },
+    {
+      "id": "M01",
+      "placement": "Campaign-page HTML title",
+      "group": "metadata",
+      "operation": "replace_text",
+      "status": "ready_for_binding",
+      "copy": {
+        "en": "Polpo trial | Political monitoring set up for you",
+        "nl-BE": "Polpo-proefaccount | Belgische politieke monitoring"
+      },
+      "basis": [
+        "S1"
+      ],
+      "implementation_note": "Campaign page metadata only; do not overwrite global product-page metadata."
+    },
+    {
+      "id": "M02",
+      "placement": "Campaign-page meta description",
+      "group": "metadata",
+      "operation": "replace_text",
+      "status": "ready_for_binding",
+      "copy": {
+        "en": "Get a Polpo trial with searches and alerts tailored to your topic. Complete the form, attend a 30-minute training and start monitoring after handover.",
+        "nl-BE": "Vraag je Polpo-proefaccount aan met zoekopdrachten en meldingen op maat. Na je training van 30 minuten start je Belgische politieke monitoring."
+      },
+      "basis": [
+        "S1"
+      ],
+      "implementation_note": ""
+    },
+    {
+      "id": "A01",
+      "placement": "Existing AI benefit panel: optional title",
+      "group": "optional_ai",
+      "operation": "replace_text",
+      "status": "conditional_do_not_publish_by_default",
+      "copy": {
+        "en": "Explore the sources with the AI Assistant",
+        "nl-BE": "Verken je bronnen met de AI Assistant"
+      },
+      "basis": [
+        "S1"
+      ],
+      "implementation_note": "",
+      "condition": "Product owner confirms AI Assistant access is included in this trial. Use within an existing AI panel only, not as an added section."
+    },
+    {
+      "id": "A02",
+      "placement": "Existing AI benefit panel: optional body",
+      "group": "optional_ai",
+      "operation": "replace_text",
+      "status": "conditional_do_not_publish_by_default",
+      "copy": {
+        "en": "Ask questions about the political material available in your account and check the underlying sources. You decide how to interpret and use the results.",
+        "nl-BE": "Stel vragen over de politieke informatie in je account en raadpleeg de onderliggende bronnen. Jij bepaalt hoe je de resultaten interpreteert en gebruikt."
+      },
+      "basis": [
+        "S2"
+      ],
+      "implementation_note": "",
+      "condition": "Same approval as A01. Do not promise every answer is correct, exhaustive or instantly available."
+    }
+  ],
+  "form_field_identity_notes": {
+    "F03": "Observed display label First name; technical name unknown.",
+    "F04": "Observed display label Last name; technical name unknown.",
+    "F05": "Observed display label Work email; technical name unknown.",
+    "F06": "Observed Phone field is required in the retrieved form. Required status is not changed by this pack.",
+    "F07": "Observed Interested in group.",
+    "F08": "Preserve the existing EU Monitoring option value.",
+    "F09": "Preserve the existing NL Monitoring option value.",
+    "F10": "Preserve the existing BE Monitoring option value.",
+    "F11": "Preserve the existing Other option value.",
+    "F12": "Observed generic open-text help field; replace display label/placeholder only.",
+    "F15": "Existing submit control.",
+    "F14_F16": "Only populate existing helper slots; otherwise omit."
+  },
+  "source_ledger": [
+    {
+      "id": "S1",
+      "title": "Current user brief: configured trial and two-step onboarding",
+      "publisher": "Polpo / Desmin Dekker",
+      "url": null,
+      "review_date": "2026-11-03",
+      "basis": "Authoritative offer for this assignment: complete the form; attend a 30-minute training and account handover; monitoring starts immediately afterwards."
+    },
+    {
+      "id": "S2",
+      "title": "AI Assistant | Polpo (retrieved through www.polpo.ai)",
+      "publisher": "Polpo",
+      "url": "https://polpo.com/dashboards/nl-monitor/ai-assistant/",
+      "requested_url": "https://www.polpo.ai/",
+      "review_date": "2026-11-03",
+      "basis": "Browser-returned text and section order. Returned snapshot was crawled approximately two months before this review; raw DOM and current visual layout were not inspected."
+    },
+    {
+      "id": "S3",
+      "title": "Demo | Polpo",
+      "publisher": "Polpo",
+      "url": "https://polpo.com/demo/",
+      "review_date": "2026-11-03",
+      "basis": "Browser-returned form labels and supporting copy. Returned snapshot was crawled approximately three months before this review. No form was submitted."
+    },
+    {
+      "id": "S4",
+      "title": "Polpo Belgian Dutch homepage",
+      "publisher": "Polpo",
+      "url": "https://polpo.com/be-nl/",
+      "review_date": "2026-11-03",
+      "basis": "Belgian Dutch terminology, monitoring and editable searches. Main body describes federal and regional coverage, while the FAQ still describes Belgian monitoring as forthcoming. Returned snapshot approximately four months old."
+    },
+    {
+      "id": "S5",
+      "title": "BE monitor | Polpo",
+      "publisher": "Polpo",
+      "url": "https://polpo.com/dashboards/be-monitor/",
+      "review_date": "2026-11-03",
+      "basis": "Email alert frequency and self-service query changes. Main body and coverage FAQ are not consistent on regional availability. Returned snapshot approximately two months old."
+    }
+  ],
+  "prepublication_decisions": [
+    {
+      "id": "G1",
+      "owner": "Agency + Polpo",
+      "decision": "Confirm intended canonical campaign URL and provide actual component/field bindings.",
+      "blocks": "Automated application and publication."
+    },
+    {
+      "id": "G2",
+      "owner": "Polpo commercial/product owner",
+      "decision": "Confirm trial price, duration, clock start, included dashboards and Assistant entitlement.",
+      "blocks": "Any additional commercial/coverage/AI claim, not the baseline monitoring copy."
+    },
+    {
+      "id": "G3",
+      "owner": "Polpo sales operations + agency",
+      "decision": "Confirm scheduling route, owner notification and account-preparation workflow.",
+      "blocks": "Booking-enabled T03–T05; default T02 assumes a human scheduling follow-up."
+    }
+  ],
+  "suggested_measurement": {
+    "primary": "Median time from submitted form to active configured account; track alongside activation rate.",
+    "events": [
+      "trial_request_submitted",
+      "training_booked",
+      "training_completed",
+      "trial_account_activated",
+      "first_source_opened",
+      "first_matching_alert_delivered"
+    ],
+    "note": "Proposed event names, not verified existing integrations. Deduplicate by request/account ID; do not place work emails or raw dossier text in analytics events."
+  }
+}
