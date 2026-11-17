@@ -13,22 +13,10 @@ ASSET = sys.argv[2] if len(sys.argv) > 2 else "/assets/"
 SITE = "https://polpo.ai"
 WEBHOOK = "https://n8n.sprintsandsneakers.com/webhook/lead-intake"
 
-# LinkedIn Insight Tag. Conversion ID is from Campaign Manager (form submit = Lead).
-# Partner ID is still missing: leave it "" until Polpo's Insight Tag partner ID is known.
-# While it is "", the base tag is not added and the conversion call does nothing.
+# LinkedIn Insight Tag. Partner ID is Polpo's (ad account 503387535).
+# The tag loads only after the visitor clicks Accept on the cookie banner.
+# Conversion ID is the form-submit "Lead" conversion in Campaign Manager.
 LINKEDIN_PARTNER_ID = "894450"
-LINKEDIN_BASE = ""
-if LINKEDIN_PARTNER_ID:
-    LINKEDIN_BASE = (
-        '<script type="text/javascript">_linkedin_partner_id = "%s";'
-        'window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];'
-        'window._linkedin_data_partner_ids.push(_linkedin_partner_id);</script>'
-        '<script type="text/javascript">(function(l){if(!l){window.lintrk=function(a,b){window.lintrk.q.push([a,b])};'
-        'window.lintrk.q=[]}var s=document.getElementsByTagName("script")[0];var b=document.createElement("script");'
-        'b.type="text/javascript";b.async=true;b.src="https://snap.licdn.com/li.lms-analytics/insight.min.js";'
-        's.parentNode.insertBefore(b,s)})(window.lintrk);</script>'
-        '<noscript><img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=%s&fmt=gif"/></noscript>'
-    ) % (LINKEDIN_PARTNER_ID, LINKEDIN_PARTNER_ID)
 
 BASE_CSS = open(os.path.join(HERE, "style.css"), encoding="utf-8").read()
 SPRITE = open(os.path.join(HERE, "sprite.svg"), encoding="utf-8").read().replace('"assets/', '"' + ASSET)
@@ -380,6 +368,53 @@ JS = r"""
 """
 
 
+COOKIE_TXT = {
+    "en": {"text": "We use cookies to measure how our ads perform. Do you accept?", "yes": "Accept", "no": "Decline"},
+    "nl-BE": {"text": "We gebruiken cookies om te meten hoe onze advertenties werken. Ga je akkoord?", "yes": "Accepteren", "no": "Weigeren"},
+}
+
+COOKIE_JS = r"""
+(function(){
+  var KEY = 'polpo_cookie_choice', PID = '__LI_PID__';
+  var banner = document.getElementById('cookie-banner');
+  function get(){ try { return localStorage.getItem(KEY); } catch (err) { return null; } }
+  function save(v){ try { localStorage.setItem(KEY, v); } catch (err) {} }
+  function loadLinkedIn(){
+    if (!PID || window._liLoaded) return;
+    window._liLoaded = true;
+    window._linkedin_partner_id = PID;
+    window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+    window._linkedin_data_partner_ids.push(PID);
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://snap.licdn.com/li.lms-analytics/insight.min.js';
+    document.body.appendChild(s);
+  }
+  var choice = get();
+  if (choice === 'yes') loadLinkedIn();
+  if (choice) return;
+  banner.hidden = false;
+  banner.querySelector('[data-accept]').addEventListener('click', function(){
+    save('yes'); banner.hidden = true; loadLinkedIn();
+  });
+  banner.querySelector('[data-decline]').addEventListener('click', function(){
+    save('no'); banner.hidden = true;
+  });
+})();
+"""
+COOKIE_JS_READY = COOKIE_JS.replace("__LI_PID__", LINKEDIN_PARTNER_ID)
+
+COOKIE_CSS = """<style>
+.cookie{position:fixed;left:16px;right:16px;bottom:16px;max-width:560px;margin:0 auto;background:#fff;color:#111;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,.18);padding:16px 18px;font:500 15px/1.45 Poppins,system-ui,sans-serif;z-index:1000}
+.cookie[hidden]{display:none}
+.cookie p{margin:0 0 12px}
+.cookie-btns{display:flex;gap:10px;justify-content:flex-end}
+.cookie button{font:600 14px Poppins,system-ui,sans-serif;border-radius:999px;padding:9px 18px;cursor:pointer;border:1px solid #111}
+.cookie-no{background:#fff;color:#111}
+.cookie-yes{background:#111;color:#fff}
+</style>"""
+
+
 def page(C):
     other_url = SITE + C["other_path"]
     self_url = SITE + C["path"]
@@ -453,7 +488,6 @@ def page(C):
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>{BASE_CSS}{EXTRA_CSS}</style>
-{LINKEDIN_BASE}
 </head>
 <body class="no-js">
 <script>document.body.classList.remove('no-js');document.body.classList.add('js');</script>
@@ -674,6 +708,15 @@ def page(C):
   </div>
 </footer>
 
+{COOKIE_CSS}
+<div class="cookie" id="cookie-banner" role="dialog" aria-live="polite" hidden>
+  <p>{e(COOKIE_TXT[C['html_lang']]['text'])}</p>
+  <div class="cookie-btns">
+    <button type="button" class="cookie-no" data-decline>{e(COOKIE_TXT[C['html_lang']]['no'])}</button>
+    <button type="button" class="cookie-yes" data-accept>{e(COOKIE_TXT[C['html_lang']]['yes'])}</button>
+  </div>
+</div>
+<script>{COOKIE_JS_READY}</script>
 <script>{js}</script>
 </body>
 </html>
