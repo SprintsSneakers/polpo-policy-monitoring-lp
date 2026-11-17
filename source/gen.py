@@ -13,6 +13,23 @@ ASSET = sys.argv[2] if len(sys.argv) > 2 else "/assets/"
 SITE = "https://polpo.ai"
 WEBHOOK = "https://n8n.sprintsandsneakers.com/webhook/lead-intake"
 
+# LinkedIn Insight Tag. Conversion ID is from Campaign Manager (form submit = Lead).
+# Partner ID is still missing: leave it "" until Polpo's Insight Tag partner ID is known.
+# While it is "", the base tag is not added and the conversion call does nothing.
+LINKEDIN_PARTNER_ID = "894450"
+LINKEDIN_BASE = ""
+if LINKEDIN_PARTNER_ID:
+    LINKEDIN_BASE = (
+        '<script type="text/javascript">_linkedin_partner_id = "%s";'
+        'window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];'
+        'window._linkedin_data_partner_ids.push(_linkedin_partner_id);</script>'
+        '<script type="text/javascript">(function(l){if(!l){window.lintrk=function(a,b){window.lintrk.q.push([a,b])};'
+        'window.lintrk.q=[]}var s=document.getElementsByTagName("script")[0];var b=document.createElement("script");'
+        'b.type="text/javascript";b.async=true;b.src="https://snap.licdn.com/li.lms-analytics/insight.min.js";'
+        's.parentNode.insertBefore(b,s)})(window.lintrk);</script>'
+        '<noscript><img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=%s&fmt=gif"/></noscript>'
+    ) % (LINKEDIN_PARTNER_ID, LINKEDIN_PARTNER_ID)
+
 BASE_CSS = open(os.path.join(HERE, "style.css"), encoding="utf-8").read()
 SPRITE = open(os.path.join(HERE, "sprite.svg"), encoding="utf-8").read().replace('"assets/', '"' + ASSET)
 STARS = open(os.path.join(HERE, "stars.svg"), encoding="utf-8").read()
@@ -354,6 +371,7 @@ JS = r"""
       document.querySelector('.progress').style.display = 'none';
       doneBox.hidden = false;
       doneBox.scrollIntoView({ block: 'center', behavior: reduce ? 'auto' : 'smooth' });
+      if (window.lintrk) { window.lintrk('track', { conversion_id: 32953169 }); }
     }).catch(function(){
       btn.disabled = false; btn.textContent = T.submit; fail('e-form', T.e_form);
     });
@@ -435,6 +453,7 @@ def page(C):
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>{BASE_CSS}{EXTRA_CSS}</style>
+{LINKEDIN_BASE}
 </head>
 <body class="no-js">
 <script>document.body.classList.remove('no-js');document.body.classList.add('js');</script>
